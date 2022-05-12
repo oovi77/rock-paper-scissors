@@ -177,5 +177,5 @@ console.log("test123");
 
     }
 
-    game();
+    //game();
     
