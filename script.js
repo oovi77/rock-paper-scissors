@@ -24,8 +24,33 @@ console.log("test123");
     console.log(lastLetter("abcd "));
     console.log(lastLetter("abcdQqq zZ"));
   */
+    const rock = document.querySelector('.rock');
+    const paper = document.querySelector('.paper');
+    const scissors = document.querySelector('.scissors');
 
-    console.log("test");
+
+    console.log(rock);
+    console.log(paper);
+    console.log(scissors);
+
+    rock.addEventListener('click', () => {
+      let computerSelection = computerPlay();
+      playRound('rock', computerSelection);
+    });
+
+
+    paper.addEventListener('click', () => {
+      let computerSelection = computerPlay();
+      playRound('paper', computerSelection);
+    });
+
+
+    scissors.addEventListener('click', () => {
+      let computerSelection = computerPlay();
+      playRound('scissors', computerSelection);
+    });
+
+
     
 
     
