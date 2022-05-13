@@ -28,26 +28,109 @@ console.log("test123");
     const paper = document.querySelector('.paper');
     const scissors = document.querySelector('.scissors');
 
+    const divComputerScore = document.querySelector('.computerScore');
+
+
+    const divPlayerScore = document.querySelector('.playerScore');
+
+    const divGameResult = document.querySelector('.gameResult');
+
+
+
 
     console.log(rock);
     console.log(paper);
     console.log(scissors);
+    console.log(divComputerScore);
+    console.log(divPlayerScore);
+
+    //divPlayerScore.innerText = 3;
+    //divComputerScore.innerText = 1;
+    let playerScore = 0;
+    let computerScore = 0;
 
     rock.addEventListener('click', () => {
       let computerSelection = computerPlay();
-      playRound('rock', computerSelection);
+      let gameResult = playRound('rock', computerSelection);
+
+
+      if (gameResult === 0) {
+        computerScore++;
+    } else if (gameResult === 1) {
+        playerScore++;
+    } else {
+        computerScore++;
+        playerScore++;
+    }
+    divPlayerScore.innerText = playerScore;
+    divComputerScore.innerText = computerScore;
+
+    if (playerScore === 5 && playerScore === computerScore) {
+      divGameResult.innerText = 'Tie Game';
+    }
+    else if (playerScore >= 5) {
+      divGameResult.innerText = 'You Win!';
+
+    } else if (computerScore >= 5) {
+      divGameResult.innerText = 'You Lose';
+    }
+
     });
 
 
     paper.addEventListener('click', () => {
       let computerSelection = computerPlay();
-      playRound('paper', computerSelection);
+      let gameResult = playRound('paper', computerSelection);
+
+
+      if (gameResult === 0) {
+        computerScore++;
+    } else if (gameResult === 1) {
+        playerScore++;
+    } else {
+        computerScore++;
+        playerScore++;
+    }
+    divPlayerScore.innerText = playerScore;
+    divComputerScore.innerText = computerScore;
+
+    if (playerScore === 5 && playerScore === computerScore) {
+      divGameResult.innerText = 'Tie Game';
+    }
+    else if (playerScore >= 5) {
+      divGameResult.innerText = 'You Win!';
+
+    } else if (computerScore >= 5) {
+      divGameResult.innerText = 'You Lose';
+    }
     });
 
 
     scissors.addEventListener('click', () => {
       let computerSelection = computerPlay();
-      playRound('scissors', computerSelection);
+      let gameResult = playRound('scissors', computerSelection);
+
+
+      if (gameResult === 0) {
+        computerScore++;
+    } else if (gameResult === 1) {
+        playerScore++;
+    } else {
+        computerScore++;
+        playerScore++;
+    }
+    divPlayerScore.innerText = playerScore;
+    divComputerScore.innerText = computerScore;
+
+    if (playerScore === 5 && playerScore === computerScore) {
+      divGameResult.innerText = 'Tie Game';
+    }
+    else if (playerScore >= 5) {
+      divGameResult.innerText = 'You Win!';
+
+    } else if (computerScore >= 5) {
+      divGameResult.innerText = 'You Lose';
+    }
     });
 
 
@@ -160,6 +243,8 @@ console.log("test123");
     console.log(test2);
     */
 
+    //game() is no longer necessary
+
     function game() {
 
         let playerScore = 0;
@@ -201,6 +286,6 @@ console.log("test123");
         }
 
     }
-
+    
     //game();
     
